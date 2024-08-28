@@ -1,0 +1,38 @@
+{
+  "name": "@lightkeeper/backend",
+  "description": "",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx main.ts",
+    "kysely": "kysely",
+    "gen": "kysely-codegen --env-file=.env --camel-case --dialect=sqlite --out-file=db/types.ts",
+    "migrate": "kysely migrate:up",
+    "postmigrate": "npm run gen"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/better-sqlite3": "^7.6.11",
+    "cross-env": "^7.0.3",
+    "kysely-codegen": "^0.15.0",
+    "kysely-ctl": "^0.9.0",
+    "tsx": "^4.17.0"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.1",
+    "@hono/zod-validator": "^0.2.2",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.4.0",
+    "better-sqlite3": "^11.1.2",
+    "bullmq": "^5.12.8",
+    "chrome-launcher": "^1.1.2",
+    "hono": "^4.5.6",
+    "lighthouse": "^12.2.0",
+    "lodash": "^4.17.21",
+    "type-fest": "^4.25.0",
+    "typescript": "^5.5.4",
+    "zod": "^3.23.8"
+  }
+}

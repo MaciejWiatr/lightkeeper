@@ -4,7 +4,9 @@ import { Hono } from "hono";
 import { analysis } from "$api/routes/analysis";
 
 export const app = new Hono();
-app.route("/analysis", analysis);
+const routes = app.route("/analysis", analysis);
+
+export type AppType = typeof routes;
 
 export const runServer = () =>
 	serve(app, ({ address, port }) => {

@@ -1,11 +1,6 @@
 import { type Queue, Worker } from "bullmq";
-import type {
-	JobSchemaType,
-	ProcessorSchemaType,
-	SandboxedJobKeys,
-} from "./types";
+import type { JobSchemaType, SandboxedJobKeys } from "./types";
 import { getSandboxedProcessor } from "./helpers";
-import { processorSchema } from "./processors/schema";
 
 const workerOptions = {
 	connection: { host: "localhost", port: 6379 },
